@@ -1,0 +1,32 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+clrscr();
+int a[20],n,i,f,j,k;
+printf("enter size of array:");
+scanf("%d",&n);
+printf("enter array elements:");
+for(i=1;i<=n;i++)
+{
+   scanf("%d",&a[i]);
+}
+printf("Numbers that occured once:");
+for(i=1;i<=n;i++)
+{
+  f=0;
+  k=a[i];
+  for(j=1;j<=n;j++)
+  {
+    if(a[j]==k)
+    {
+	f++;
+    }
+  }
+  if(f==1)
+  {
+     printf("\n%d",a[i]);
+  }
+}
+getch();
+}
