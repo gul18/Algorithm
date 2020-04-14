@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{ clrscr();
+  int n,a[10],i;
+  printf("Enter number of elements in array:");
+  scanf("%d",&n);
+  printf("\n Enter values in array");
+  for(i=0;i<n;i++)
+  {
+   scanf("%d", &a[i]);
+  }
+  int gap=n/2;
+  while(gap>0)
+  {
+  int j=gap;
+  for(i=0,j=gap;j<n;i++,j++)
+	{
+		if(a[i]>a[j])
+			{
+			int temp=a[i];
+			a[i]=a[j];
+			a[j]=temp;
+			int c=i-gap;
+			if(c>=0)
+				{
+				if(a[c]>a[i])
+					{
+					int temp1=a[i];
+					a[i]=a[c];
+					a[c]=temp1;
+					}
+				 }
+			}
+
+	}
+		gap=gap/2;
+  }
+  printf("\n Sorted array is:");
+  for(i=0;i<n;i++)
+  {
+   printf("\n %d", a[i]);
+  }
+getch();
+}
